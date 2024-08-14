@@ -1,14 +1,21 @@
-// script.js
 function checkText() {
-    const prohibitedWords = ["poker", "job displacement", "privacy"];
-    const text = document.getElementById("userText").value.toLowerCase();
+    const prohibitedWords = [
+        "blackjack", "baccarat", "pai gow poker", "poker", "roulette", 
+        "card game", "sport betting", "slot game", "dice game", 
+        "gambling", "porn", "porn toys", 
+        "scam", "legit"
+    ];
+    let text = document.getElementById("userText").value;
     const lines = text.split('\n');
     let result = "";
 
-    lines.forEach((line, index) => {
-        prohibitedWords.forEach(word => {
-            if (line.includes(word)) {
-                result += `Prohibited word found: "${word}" on line ${index + 1}<br>`;
+    prohibitedWords.forEach(word => {
+        const regex = new RegExp(`(${word})`, 'gi');
+        text = text.replace(regex, '<span class="highlight">$1</span>');
+
+        lines.forEach((line, index) => {
+            if (line.toLowerCase().includes(word.toLowerCase())) {
+                result += `- "${word}" (on line ${index + 1})<br>`;
             }
         });
     });
@@ -18,4 +25,5 @@ function checkText() {
     }
 
     document.getElementById("result").innerHTML = result;
+    document.getElementById("userText").innerHTML = text;
 }
