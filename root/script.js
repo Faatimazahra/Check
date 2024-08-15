@@ -3,8 +3,12 @@ function checkText() {
         "blackjack", "baccarat", "pai gow poker", "poker", "roulette", 
         "card game", "sport betting", "slot game", "dice game", 
         "gambling", "porn", "porn toys", 
-        "scam", "legit"
+        "scam", "legit", 
+        "casino", "solitaire", "cards game", 
+        "bankroll", "face cards", "high roller", 
+        "adult", "racism"
     ];
+
     let text = document.getElementById("userText").value;
     const lines = text.split('\n');
     let result = "";
