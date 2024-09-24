@@ -5,8 +5,7 @@ function checkText() {
         "gambling", "porn", "porn toys", 
         "scam", "legit", 
         "casino", "solitaire", "cards game", 
-        "bankroll", "face cards", "high roller", 
-        "adult", "racism"
+        "bankroll", "face cards", "high roller", "racism"
     ];
 
     let text = document.getElementById("userText").value;
